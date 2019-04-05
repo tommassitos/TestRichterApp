@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLINQ", "PLINQ\PLINQ.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachine", "StateMachine\StateMachine.csproj", "{2EF76B69-63BF-4FC3-9AD4-AF0ABE36C535}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserSync", "UserSync\UserSync.csproj", "{C12B4E40-5B23-4DCA-8C2F-202EEDD14323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{2EF76B69-63BF-4FC3-9AD4-AF0ABE36C535}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF76B69-63BF-4FC3-9AD4-AF0ABE36C535}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF76B69-63BF-4FC3-9AD4-AF0ABE36C535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12B4E40-5B23-4DCA-8C2F-202EEDD14323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12B4E40-5B23-4DCA-8C2F-202EEDD14323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12B4E40-5B23-4DCA-8C2F-202EEDD14323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12B4E40-5B23-4DCA-8C2F-202EEDD14323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

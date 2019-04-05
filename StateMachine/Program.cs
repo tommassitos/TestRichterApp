@@ -14,9 +14,12 @@ namespace StateMachine
     {
         static void Main(string[] args)
         {
-            MyMethodAsync(2);
+            //  MyMethodAsync(2);
+            TaskLogger.Go();
+           // TestAwaiter.Go();
             Console.ReadLine();
         }
+
         [DebuggerStepThrough, AsyncStateMachine(typeof(StateMachine))]
         private static Task<string> MyMethodAsync(int argument)
         {
