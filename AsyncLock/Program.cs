@@ -9,7 +9,7 @@ namespace AsyncLock
 {
     class Program
     {
-        static SemaphoreSlim sl = new SemaphoreSlim(1);
+        static SemaphoreSlim sl = new SemaphoreSlim(1, 1);
 
         static StringBuilder sb = new StringBuilder();
 
@@ -68,7 +68,7 @@ namespace AsyncLock
 
                 int d = new Random().Next(1, 1000);
                 await Task.Delay(d);
-               // Thread.Sleep(d);
+                // Thread.Sleep(d);
 
                 await sl.WaitAsync();
 

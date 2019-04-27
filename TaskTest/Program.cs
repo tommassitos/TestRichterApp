@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ namespace TaskTest
     {
         static void Main(string[] args)
         {
-            Example4();
+            // Example4();
+            ExampleMultyTask();
+            Console.ReadLine();
         }
 
         static void Example4()
@@ -145,6 +148,46 @@ namespace TaskTest
             }
 
             return sum;
+        }
+
+        static HttpClient http = new HttpClient();
+
+        static async Task ExampleMultyTask()
+        {
+            int pages = 100;
+            while (pages-- > 0)
+            {
+                var tasks = new List<Task>();
+
+                int count = 10;
+
+                while (count-- > 0)
+                {
+                    var task = Task.Run(async () =>
+                    {
+                        try
+                        {
+                            var item = await http.GetStringAsync("https://ya.ru/");
+                            //парсинг item
+                            // асинхронная запись в бд через, например await context.SaveChangesAsync(); 
+                            Console.Write("записано" + Environment.NewLine);
+                        }
+                        catch
+                        {
+                            //
+                            Console.Write("ошибка" + Environment.NewLine);
+                        }
+                    });
+
+                    tasks.Add(task);
+                }
+
+                await Task.WhenAll(tasks);
+
+                //переход на след страницу             
+                Console.Write("следующая страница" + Environment.NewLine);
+
+            }
         }
     }
 }
